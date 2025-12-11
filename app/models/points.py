@@ -10,5 +10,6 @@ class UserPointLog(db.Model):
     change = db.Column(db.Integer, nullable=False)
     balance_after = db.Column(db.Integer, nullable=False)
     type = db.Column(db.String(50), nullable=False)
+    source = db.Column(db.String(20), default='general')  # sleep, shop, general 등
     sleep_log_id = db.Column(db.Integer, db.ForeignKey('sleep_logs.id'))
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
